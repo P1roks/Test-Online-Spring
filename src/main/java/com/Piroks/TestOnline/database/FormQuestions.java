@@ -5,49 +5,26 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class FormQuestion {
-    private int id;
-    private int choice;
-    public FormQuestion(int id, int choice){
-        this.setId(id);
-        this.setChoice(choice);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getChoice() {
-        return choice;
-    }
-
-    public void setChoice(int choice) {
-        this.choice = choice;
-    }
-
-    @Override
-    public String toString() {
-        return String.format(" id = %d choice = %d",this.id,this.choice);
-    }
-}
-
+@Component
 public class FormQuestions{
-    private List<FormQuestions> formData;
+    private List<FormQuestion> formData;
 
-    public List<FormQuestions> getFormData() {
+    public List<FormQuestion> getFormData() {
         return formData;
     }
 
-    public void setFormData(List<FormQuestions> formData) {
+    public String getTest(){
+        if(!formData.isEmpty())
+            return formData.get(0).toString();
+        return "It is empty!";
+    }
+
+    public void setFormData(List<FormQuestion> formData) {
         this.formData = formData;
     }
 
-    @Override
-    public String toString() {
-        return this.formData.stream().map(x -> x.toString()).collect(Collectors.joining());
-    }
+//    @Override
+//    public String toString() {
+//        return this.formData.stream().map(x -> x.toString()).collect(Collectors.joining());
+//    }
 }
