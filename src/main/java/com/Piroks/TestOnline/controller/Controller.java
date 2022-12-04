@@ -29,9 +29,10 @@ public class Controller {
         return "test.html";
     }
 
-    @PostMapping("/check")
-    public String check(Model model, @ModelAttribute FormQuestions test){
-        //TODO: Get all the answers to questions previously submitted by the user and then calculate the number of the correct answers
-        return test.toString();
-    }
+//    @PostMapping("/check")
+//    public String check(Model model, @ModelAttribute FormQuestions checked){
+//        //TODO: Get all the answers to questions previously submitted by the user and then calculate the number of the correct answers
+//        model.addAttribute("checked",checked);
+//        return "check.html";
+//    }
 }
