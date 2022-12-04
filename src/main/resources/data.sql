@@ -1,13 +1,15 @@
---create table questions(
---    id INT not null auto_increment primary key,
---    question varchar(255) NOT NULL,
---    optionA varchar(255) not null,
---    optionB varchar(255) not null,
---    optionC varchar(255),
---    optionD varchar(255),
---    corrIdx tinyint unsigned not null,
---    points tinyint unsigned not null,
---    image BLOB);
+create database inf03;
+use inf03;
+create table questions(
+    id INT not null auto_increment primary key,
+    question varchar(255) NOT NULL,
+    optionA varchar(255) not null,
+    optionB varchar(255) not null,
+    optionC varchar(255),
+    optionD varchar(255),
+    corrIdx tinyint unsigned not null,
+    points tinyint unsigned not null,
+    image BLOB);
 Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,points) values(1,"Czym jest PHP?",
     "Skryptowym językiem programowania zaprojektowanym do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym.",
     "Niskopoziomym językim, służącym do programowania mikroprocesorów",
