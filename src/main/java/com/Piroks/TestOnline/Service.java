@@ -17,8 +17,9 @@ public class Service {
     private QuestionRepo qRepo;
 
     public Questions getQuests(int number){
-        var randomQuests = qRepo.findAll().subList(0,number);
+        var randomQuests = qRepo.findAll();
         Collections.shuffle(randomQuests);
+        randomQuests = randomQuests.subList(0,number);
         quests.setQuestions(randomQuests);
         return quests;
     }
