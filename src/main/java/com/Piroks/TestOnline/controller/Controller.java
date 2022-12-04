@@ -17,6 +17,11 @@ public class Controller {
         return "index.html";
     }
 
+    @GetMapping("/error")
+    public String err(){
+        return "error.html";
+    }
+
     @RequestMapping("/{questNo}")
     public String test(@PathVariable(value="questNo") int number, Model model){
        //TODO: Get variable number of questions and add them to the response before redirecting user to the website
