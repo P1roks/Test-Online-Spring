@@ -12,27 +12,28 @@
     <div th:insert="~{navbar.html :: navbar}"></div>
 
     <form action="submit" method="POST" th:object="${allQuestions}">
-        <div id="questions" th:each="quest,i : ${allQuestions.questions}">
+        <div id="questions" th:each="quest : ${allQuestions.questions}">
             <div class="quest">
                 <h3>
                     <p class="content" th:text="${quest.question}"></p>
+                    <p th:text="'(' + ${quest.points} + 'pkt.)'"></p>
                 </h3>
                 <div class="answers">
                     <div class="answer">
-                        <input type="radio" th:name="${i}" th:id="${i}">
-                        <label th:for="${i}" th:text="${quest.optionA}"></label>
+                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '0'">
+                        <label th:for="${quest.id} + '0'" th:text="${quest.optionA}"></label>
                     </div>
                     <div class="answer">
-                        <input type="radio" th:name="${i}" th:id="${i}">
-                        <label th:for="${i}" th:text="${quest.optionB}"></label>
+                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '1'">
+                        <label th:for="${quest.id} + '1'" th:text="${quest.optionB}"></label>
                     </div>
                     <div class="answer">
-                        <input type="radio" th:name="${i}" th:id="${i}">
-                        <label th:for="${i}" th:text="${quest.optionC}"></label>
+                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '2'">
+                        <label th:for="${quest.id} + '2'" th:text="${quest.optionC}"></label>
                     </div>
                     <div class="answer">
-                        <input type="radio" th:name="${i}" th:id="${i}">
-                        <label th:for="${i}" th:text="${quest.optionD}"></label>
+                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '3'">
+                        <label th:for="${quest.id} + '3'" th:text="${quest.optionD}"></label>
                     </div>
                 </div>
             </div>
