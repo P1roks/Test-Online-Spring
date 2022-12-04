@@ -1,4 +1,4 @@
-package com.Piroks.TestOnline.Controller;
+package com.Piroks.TestOnline.controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
