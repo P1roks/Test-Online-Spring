@@ -21,7 +21,7 @@ br{
 .edge{
 	flex:1;
 }
-#test{
+#navbar{
     font-size: 400%;
     width: 100%;
     background-color: #191919;
@@ -30,10 +30,10 @@ br{
     top:0;
     padding: 0.2% 0;
 }
-#test a{
+#navbar a{
 	position:relative;
 }
-#test a img{
+#navbar a img{
 	position: absolute;
 	max-height: 100%;
 }
