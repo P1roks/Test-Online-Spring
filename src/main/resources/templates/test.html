@@ -11,8 +11,8 @@
 <body>
     <div th:insert="~{navbar.html :: navbar}"></div>
 
-    <form action="submit" method="POST" th:object="${allQuestions}">
-        <div id="questions" th:each="quest : ${allQuestions.questions}">
+    <form action="#" th:action="@{/check}" method="POST" th:object="${FormQuestions}">
+        <div id="questions" th:each="quest,i : ${allQuestions.questions}">
             <div class="quest">
                 <h3>
                     <p class="content" th:text="${quest.question}"></p>
@@ -20,21 +20,26 @@
                 </h3>
                 <div class="answers">
                     <div class="answer">
-                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '0'">
-                        <label th:for="${quest.id} + '0'" th:text="${quest.optionA}"></label>
+                        <input type="radio" th:name="|formData[${i.index}].choice|" th:id="${i.index} + '0'"
+                               th:value="${quest.corrIdx == 0 ? quest.points : -quest.points}">
+                        <label th:for="${i.index} + '0'" th:text="${quest.optionA}"></label>
                     </div>
                     <div class="answer">
-                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '1'">
-                        <label th:for="${quest.id} + '1'" th:text="${quest.optionB}"></label>
+                        <input type="radio" th:name="|formData[${i.index}].choice|" th:id="${i.index} + '1'"
+                               th:value="${quest.corrIdx == 1 ? quest.points : -quest.points}">
+                        <label th:for="${i.index} + '1'" th:text="${quest.optionB}"></label>
                     </div>
                     <div class="answer">
-                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '2'">
-                        <label th:for="${quest.id} + '2'" th:text="${quest.optionC}"></label>
+                        <input type="radio" th:name="|formData[${i.index}].choice|" th:id="${i.index} + '2'"
+                        th:value="${quest.corrIdx == 2 ? quest.points : -quest.points}">
+                        <label th:for="${i.index} + '2'" th:text="${quest.optionC}"></label>
                     </div>
                     <div class="answer">
-                        <input type="radio" th:name="${quest.id}" th:id="${quest.id} + '3'">
-                        <label th:for="${quest.id} + '3'" th:text="${quest.optionD}"></label>
+                        <input type="radio" th:name="|formData[${i.index}].choice|" th:id="${i.index} + '3'"
+                               th:value="${quest.corrIdx == 3 ? quest.points : -quest.points}">
+                        <label th:for="${i.index} + '3'" th:text="${quest.optionD}"></label>
                     </div>
+                    <input type="hidden" th:name="|formData[${i.index}].id|" th:value="|${quest.id}|">
                 </div>
             </div>
         </div>

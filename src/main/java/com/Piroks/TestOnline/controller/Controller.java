@@ -1,12 +1,10 @@
 package com.Piroks.TestOnline.controller;
 
 import com.Piroks.TestOnline.Service;
+import com.Piroks.TestOnline.database.FormQuestions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -24,8 +22,6 @@ public class Controller {
 
     @RequestMapping("/{questNo}")
     public String test(@PathVariable(value="questNo") int number, Model model){
-       //TODO: Get variable number of questions and add them to the response before redirecting user to the website
-        //return "TODO.html";
 
         var questions = serv.getQuests(number);
         model.addAttribute("allQuestions",questions);
@@ -34,8 +30,8 @@ public class Controller {
     }
 
     @PostMapping("/check")
-    public String check(Model model){
+    public String check(Model model, @ModelAttribute FormQuestions test){
         //TODO: Get all the answers to questions previously submitted by the user and then calculate the number of the correct answers
-        return "TODO.html";
+        return test.toString();
     }
 }
