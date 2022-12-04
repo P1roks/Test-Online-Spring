@@ -26,15 +26,14 @@ public class Question {
     private byte points;
     @Lob
     private byte[] image;
-    @Transient
-    private byte choice;
+
 
     @Override
     public String toString() {
         return String.format("Question [id = %d, question = %s, optionA = %s, optionB = %s, optionC = %s," +
-                " optionD = %s, corrIdx = %d, points = %d, choice = %d]",
+                " optionD = %s, corrIdx = %d, points = %d]",
                 this.getId(),this.getQuestion(),this.getOptionA(),this.getOptionB(),this.getOptionC(),
-                this.getOptionD(),this.getCorrIdx(),this.getPoints(),this.getChoice());
+                this.getOptionD(),this.getCorrIdx(),this.getPoints());
     }
 
     public int getId() {
@@ -109,11 +108,4 @@ public class Question {
         this.image = image;
     }
 
-    public byte getChoice() {
-        return choice;
-    }
-
-    public void setChoice(byte choice) {
-        this.choice = choice;
-    }
 }
