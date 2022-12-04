@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Test Online</title>
+    <style>
+        .quest{
+            text-align:center;
+        }
+        .correct{
+            color:lime;
+        }
+        .wrong{
+            color:red;
+        }
+        .invalid{
+            color:Aqua;
+        }
+        #result{
+            display:flex;
+            justify-content:center;
+            margin-top:2%;
+            padding-bottom: 2%;
+            zoom:200%;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{navbar.html :: navbar}"></div>
+<div id="result">
+    <p>Uzyskałeś: </p>
+    <p th:text="${gainedPoints} + '/' + ${maxPoints}"></p>
+    <p>pkt. Stanowi to : </p>
+    <p th:text="${gainedPoints}/${maxPoints} * 100 + '%'"></p>
+</div>
+
+</body>
+</html>

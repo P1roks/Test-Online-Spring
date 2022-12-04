@@ -76,10 +76,10 @@ Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,poin
     "zwykłą, zdefiniowaną przez twórcę strony",
 2,2);
 Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,points) values(12,"Przy użyciu którego znacznika w języku HTML nie można umieścić na stronie grafiki dynamicznej?",
-    "&ltobject&gt",
-    "&ltstrike&gt",
-    "&ltembed&gt",
-    "&ltimg&gt",
+    "<object>",
+    "<strike>",
+    "<embed>",
+    "<img>",
 1,3);
 Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,points) values(13,"Selektor CSS a:link {color:red} zawarty w kaskadowych arkuszach stylów definiuje",
     "klasę",
