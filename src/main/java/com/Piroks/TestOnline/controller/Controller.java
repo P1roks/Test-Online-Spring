@@ -40,6 +40,7 @@ public class Controller {
         int gainedPoints = checked.getQuestions().stream().mapToInt(Question::getChoicePoints).sum();
         model.addAttribute("maxPoints",maxPoints);
         model.addAttribute("gainedPoints",gainedPoints);
+        model.addAttribute("checkedQuestions",checked);
         return "check.html";
     }
 }

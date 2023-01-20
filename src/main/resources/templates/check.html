@@ -31,11 +31,31 @@
 </head>
 <body>
 <div th:insert="~{navbar.html :: navbar}"></div>
-<div id="result">
-    <p>Uzyskałeś: </p>
-    <p th:text="${gainedPoints} + '/' + ${maxPoints}"></p>
-    <p>pkt. Stanowi to : </p>
-    <p th:text="${gainedPoints}/${maxPoints} * 100 + '%'"></p>
+<div id="checked">
+    <div id="allQuest">
+        <div class="quest" th:each="quest, i: ${checkedQuestions.questions}">
+            <span th:text="'Pytanie' + ${i.index} + ': ( ' + ${quest.points} + 'pkt.)'"></span>
+            <span th:text="${quest.question}"></span>
+            <span class="invalid" th:if="${quest.choice == 0}">Nie udzieliłeś odpowiedzi!</span>
+            <span class="wrong" th:if="${quest.choice < 0}" th:switch="${-quest.choice}">
+                Twoja odpowiedź:
+                <span th:case="0" th:text="${quest.optionA}"></span>
+                <span th:case="1" th:text="${quest.optionB}"></span>
+                <span th:case="2" th:text="${quest.optionC}"></span>
+                <span th:case="3" th:text="${quest.optionD}"></span>
+            </span>
+            <span class="correct" th:switch="${quest.corrIdx}">
+                Poprawna odpowiedź:
+                <span th:case="0" th:text="${quest.optionA}"></span>
+                <span th:case="1" th:text="${quest.optionB}"></span>
+                <span th:case="2" th:text="${quest.optionC}"></span>
+                <span th:case="3" th:text="${quest.optionD}"></span>
+            </span>
+        </div>
+    </div>
+    <div id="result">
+        <p th:text="'Uzyskałeś ' + ${gainedPoints} + '/' + ${maxPoints} + 'pkt. Stanowi to: ' + ${gainedPoints}/${maxPoints} * 100 + '%'"></p>
+    </div>
 </div>
 
 </body>
