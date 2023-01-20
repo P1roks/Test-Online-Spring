@@ -7,7 +7,7 @@ create table questions(
     optionB varchar(255) not null,
     optionC varchar(255),
     optionD varchar(255),
-    corrIdx tinyint unsigned not null,
+    corr_idx tinyint unsigned not null,
     points tinyint unsigned not null,
     image BLOB);
 Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,points) values(1,"Czym jest PHP?",
@@ -78,10 +78,10 @@ Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,poin
     "zwykłą, zdefiniowaną przez twórcę strony",
 2,2);
 Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,points) values(12,"Przy użyciu którego znacznika w języku HTML nie można umieścić na stronie grafiki dynamicznej?",
-    "<object>",
-    "<strike>",
-    "<embed>",
-    "<img>",
+    "&lt;object>gt;",
+    "&lt;strike>gt;",
+    "&lt;embed>gt;",
+    "&lt;img>gt;",
 1,3);
 Insert Into questions (id,question,optionA,optionB,optionC,optionD,corr_idx,points) values(13,"Selektor CSS a:link {color:red} zawarty w kaskadowych arkuszach stylów definiuje",
     "klasę",

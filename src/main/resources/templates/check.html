@@ -34,7 +34,7 @@
 <div id="checked">
     <div id="allQuest">
         <div class="quest" th:each="quest, i: ${checkedQuestions.questions}">
-            <span th:text="'Pytanie' + ${i.index} + ': ( ' + ${quest.points} + 'pkt.)'"></span>
+            <span th:text="'Pytanie ' + ${i.index} + 1 + ': ( ' + ${quest.points} + 'pkt.)'"></span>
             <span th:text="${quest.question}"></span>
             <span class="invalid" th:if="${quest.choice == 0}">Nie udzieliłeś odpowiedzi!</span>
             <span class="wrong" th:if="${quest.choice < 0}" th:switch="${-quest.choice}">
@@ -53,8 +53,8 @@
             </span>
         </div>
     </div>
-    <div id="result">
-        <p th:text="'Uzyskałeś ' + ${gainedPoints} + '/' + ${maxPoints} + 'pkt. Stanowi to: ' + ${gainedPoints}/${maxPoints} * 100 + '%'"></p>
+    <div id="result" th:with="percent=${gainedPoints}/${maxPoints}">
+        <p th:text="'Uzyskałeś ' + ${gainedPoints} + '/' + ${maxPoints} + 'pkt. Stanowi to: ' + ${#numbers.formatPercent(percent,2,2)}"></p>
     </div>
 </div>
 
