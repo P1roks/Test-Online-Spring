@@ -35,22 +35,9 @@
     <div id="allQuest">
         <div class="quest" th:each="quest, i: ${checkedQuestions.questions}">
             <span th:text="'Pytanie ' + ${i.index} + 1 + ': ( ' + ${quest.points} + 'pkt.)'"></span>
-            <span th:text="${quest.question}"></span>
             <span class="invalid" th:if="${quest.choice == 0}">Nie udzieliłeś odpowiedzi!</span>
-            <span class="wrong" th:if="${quest.choice < 0}" th:switch="${-quest.choice}">
-                Twoja odpowiedź:
-                <span th:case="0" th:text="${quest.optionA}"></span>
-                <span th:case="1" th:text="${quest.optionB}"></span>
-                <span th:case="2" th:text="${quest.optionC}"></span>
-                <span th:case="3" th:text="${quest.optionD}"></span>
-            </span>
-            <span class="correct" th:switch="${quest.corrIdx}">
-                Poprawna odpowiedź:
-                <span th:case="0" th:text="${quest.optionA}"></span>
-                <span th:case="1" th:text="${quest.optionB}"></span>
-                <span th:case="2" th:text="${quest.optionC}"></span>
-                <span th:case="3" th:text="${quest.optionD}"></span>
-            </span>
+            <span class="wrong" th:if="${quest.choice < 0}" th:text="'Twoja odpowiedź: ' + ${quest.selected}"> </span>
+            <span class="correct" th:text="'Poprawna odpowiedź: ' + ${quest.correct}"> </span>
         </div>
     </div>
     <div id="result" th:with="percent=${gainedPoints}/${maxPoints}">

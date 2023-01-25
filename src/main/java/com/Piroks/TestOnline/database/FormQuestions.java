@@ -23,8 +23,4 @@ public class FormQuestions{
         this.formData = formData;
     }
 
-//    @Override
-//    public String toString() {
-//        return this.formData.stream().map(x -> x.toString()).collect(Collectors.joining());
-//    }
 }

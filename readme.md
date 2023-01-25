@@ -3,10 +3,10 @@ It lets you select the number of questions that will be presented to you, and af
 
 # How to launch:
 1. git clone
-2. impoort the database in /src/main/resources/data.sql
+2. import the database in /src/main/resources/data.sql
 3. ./mvnw spring-boot:run
 4. go to localhost:8080 on the browser
 
 # TODO:
-- Make the app show details after you submit your quiz (what answer was right if you got a given question wrong)
-- Structural improvements
+- ~~Make the app show details after you submit your quiz (what answer was right if you got a given question wrong)~~
+- ~~Structural improvements~~
