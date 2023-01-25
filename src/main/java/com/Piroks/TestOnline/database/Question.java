@@ -29,15 +29,6 @@ public class Question {
     @Transient
     private int choice;
 
-
-    @Override
-    public String toString() {
-        return String.format("Question [id = %d, question = %s, optionA = %s, optionB = %s, optionC = %s," +
-                " optionD = %s, corrIdx = %d, points = %d, choice = %d]",
-                this.getId(),this.getQuestion(),this.getOptionA(),this.getOptionB(),this.getOptionC(),
-                this.getOptionD(),this.getCorrIdx(),this.getPoints(),this.getChoice());
-    }
-
     public int getId() {
         return id;
     }

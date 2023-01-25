@@ -44,6 +44,7 @@ br{
 	background-color: #202020;
 	border-radius: 10px;
 	padding: 10px;
+	font-size:200%;
 }
 .quest h3{
     display:flex;

@@ -3,20 +3,17 @@ package com.Piroks.TestOnline.database;
 public class CheckedQuestion {
     private String selected;
     private String correct;
+    private String question;
     private int choice;
     private int points;
 
-    @Override
-    public String toString() {
-        return String.format("CheckedQuestion [selected = %s, correct = %s, choice = %d, points = %d]",this.selected,this.correct,this.choice,this.points);
-    }
-
     public CheckedQuestion(){}
-    public CheckedQuestion(String selected, String correct, int choice,int points){
+    public CheckedQuestion(String selected, String correct, int choice,int points,String question){
         this.selected = selected;
         this.correct = correct;
         this.choice = choice;
         this.points = points;
+        this.setQuestion(question);
     }
 
     public String getSelected() {
@@ -52,5 +49,13 @@ public class CheckedQuestion {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
     }
 }

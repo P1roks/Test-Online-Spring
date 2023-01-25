@@ -49,20 +49,15 @@
                     </div>
 
                     <input type="hidden" th:name="|questions[${i.index}].points|" th:value="|${quest.points}|">
+                    <input type="hidden" th:name="|questions[${i.index}].question|" th:value="|${quest.question}|">
                     <p th:switch="${quest.corrIdx}" class="hidden">
                         <input th:case="0" type="hidden" th:name="|questions[${i.index}].correct|" th:value="|${quest.optionA}|">
                         <input th:case="1" type="hidden" th:name="|questions[${i.index}].correct|" th:value="|${quest.optionB}|">
                         <input th:case="2" type="hidden" th:name="|questions[${i.index}].correct|" th:value="|${quest.optionC}|">
                         <input th:case="3" type="hidden" th:name="|questions[${i.index}].correct|" th:value="|${quest.optionD}|">
                     </p>
+
                     <script type="text/javascript" th:src="@{/js/script.js}"></script>
-<!--                    <input type="hidden" th:name="|questions[${i.index}].id|" th:value="|${quest.id}|">-->
-<!--                    <input type="hidden" th:name="|questions[${i.index}].question|" th:value="|${quest.question}|">-->
-<!--                    <input type="hidden" th:name="|questions[${i.index}].optionA|" th:value="|${quest.optionA}|">-->
-<!--                    <input type="hidden" th:name="|questions[${i.index}].optionB|" th:value="|${quest.optionB}|">-->
-<!--                    <input type="hidden" th:name="|questions[${i.index}].optionC|" th:value="|${quest.optionC}|">-->
-<!--                    <input type="hidden" th:name="|questions[${i.index}].optionD|" th:value="|${quest.optionD}|">-->
-<!--                    <input type="hidden" th:name="|questions[${i.index}].corrIdx|" th:value="|${quest.corrIdx}|">-->
                 </div>
             </div>
         </div>

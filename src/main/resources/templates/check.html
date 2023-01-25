@@ -6,35 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/check.css}">
     <title>Test Online</title>
-    <style>
-        .quest{
-            text-align:center;
-        }
-        .correct{
-            color:lime;
-        }
-        .wrong{
-            color:red;
-        }
-        .invalid{
-            color:Aqua;
-        }
-        #result{
-            display:flex;
-            justify-content:center;
-            margin-top:2%;
-            padding-bottom: 2%;
-            zoom:200%;
-        }
-    </style>
 </head>
 <body>
 <div th:insert="~{navbar.html :: navbar}"></div>
 <div id="checked">
     <div id="allQuest">
         <div class="quest" th:each="quest, i: ${checkedQuestions.questions}">
-            <span th:text="'Pytanie ' + ${i.index} + 1 + ': ( ' + ${quest.points} + 'pkt.)'"></span>
+            <span th:text="'Pytanie ' + ${i.index + 1}  + ': ( ' + ${quest.points} + 'pkt.)'"></span>
+            <span th:text="${quest.question}"></span>
             <span class="invalid" th:if="${quest.choice == 0}">Nie udzieliłeś odpowiedzi!</span>
             <span class="wrong" th:if="${quest.choice < 0}" th:text="'Twoja odpowiedź: ' + ${quest.selected}"> </span>
             <span class="correct" th:text="'Poprawna odpowiedź: ' + ${quest.correct}"> </span>
